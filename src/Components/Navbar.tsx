@@ -9,7 +9,6 @@ import InputBase from '@mui/material/InputBase';
 import Badge from '@mui/material/Badge';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import MailIcon from '@mui/icons-material/Mail';
 import AddTask from '../Components/AddTask';
@@ -63,9 +62,7 @@ export default function PrimarySearchAppBar() {
     const isMenuOpen = Boolean(anchorEl);
     const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
-    const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-        setAnchorEl(event.currentTarget);
-    };
+ 
 
     const handleMobileMenuClose = () => {
         setMobileMoreAnchorEl(null);
@@ -76,9 +73,6 @@ export default function PrimarySearchAppBar() {
         handleMobileMenuClose();
     };
 
-    const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-        setMobileMoreAnchorEl(event.currentTarget);
-    };
 
     const menuId = 'primary-search-account-menu';
     const renderMenu = (

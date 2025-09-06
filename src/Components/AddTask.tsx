@@ -1,8 +1,7 @@
 import { Box, Paper, Button, Grid, InputBase } from "@mui/material";
 import { addTodo } from "../Components/todo";
 import { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "../Components/store";
+import { useDispatch } from "react-redux";
 import { styled, alpha } from '@mui/material/styles';
 import Card from '../Components/Card'
 
@@ -41,14 +40,14 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 function AddTask() {
     const [task, setTask] = useState("");
-    const todos = useSelector((state: RootState) => state.todo.todos);
     const dispatch = useDispatch();
     return (
         <>
-            <form onSubmit={() => {
-                                dispatch(addTodo(task));
-                                setTask("")
-                            }}>
+            <form onSubmit={(event)=>{
+                dispatch(addTodo(task));
+                setTask("")
+                event.preventDefault()
+            }}>
 
                 <div>
                     <Box
