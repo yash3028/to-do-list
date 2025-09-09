@@ -8,15 +8,14 @@ interface Todo {
 
 interface CardProps {
   todos: Todo[];
-  deleteMode: boolean;
 }
 
-function Card({ todos, deleteMode }:CardProps) {
+function Card({ todos }:CardProps) {
   return (
     <Grid container spacing={2} sx={{ mt: 2 }}>
       {todos.map((todo, index) => (
         <Grid size={{xs:12,sm:6,md:4}}  key={index}>
-          <TodoCard todo={todo} index={index} deleteMode={deleteMode} />
+          <TodoCard todo={todo} index={index} />
         </Grid>
       ))}
     </Grid>

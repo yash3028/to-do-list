@@ -1,13 +1,13 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom"
-import Navbar from "./Components/Navbar"
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./Components/Navbar";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Navbar />} />
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Navbar />} />
+      <Route path="*" element={<Navbar />} /> 
+    </Routes>
   );
 }
-export default App
+
+export default App;

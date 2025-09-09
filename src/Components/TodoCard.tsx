@@ -11,10 +11,9 @@ interface Todo {
 interface TodoCardProps {
   todo: Todo;
   index: number;
-  deleteMode: boolean;
 }
 
-export default function TodoCard({ todo, index, deleteMode }: TodoCardProps) {
+export default function TodoCard({ todo, index }: TodoCardProps) {
   const dispatch = useDispatch();
   const [editing, setEditing] = useState(false);
   const [newText, setNewText] = useState(todo.text);
@@ -42,7 +41,7 @@ export default function TodoCard({ todo, index, deleteMode }: TodoCardProps) {
       ) : (
         <>
           <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-            {deleteMode && (
+            { (
               <Checkbox
                 checked={todo.selected}
                 onChange={() => dispatch(toggleSelect(index))}
@@ -51,7 +50,7 @@ export default function TodoCard({ todo, index, deleteMode }: TodoCardProps) {
             <Typography>{todo.text}</Typography>
           </Box>
 
-          {!deleteMode && (
+          { (
             <Box sx={{ display: "flex", justifyContent: "flex-end" }} gap={1}>
               <Button variant="outlined" size="small" onClick={() => setEditing(true)}>
                 Edit

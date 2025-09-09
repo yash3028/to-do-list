@@ -101,7 +101,7 @@ function AddTask() {
       </form>
 
       <Grid>
-        <Card todos={todos} deleteMode={deleteMode} />
+        <Card todos={todos}  />
       </Grid>
 
       {deleteMode && todos.some((t) => t.selected) && (
